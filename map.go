@@ -1,7 +1,7 @@
 package main
 
 type MyMap struct {
-	Key   int    `json:"key"`
+	Key   string `json:"key"`
 	Value string `json:"value"`
 }
 

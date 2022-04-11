@@ -5,16 +5,13 @@ import (
 	"io"
 	"io/ioutil"
 	"net/http"
-	"strconv"
 
 	mux "github.com/julienschmidt/httprouter"
 )
 
 func Get(w http.ResponseWriter, r *http.Request, ps mux.Params) {
 
-	id, err := strconv.Atoi(ps.ByName("key"))
-
-	HandleError(err)
+	id := ps.ByName("key")
 
 	key := RepositoryGet(id)
 
